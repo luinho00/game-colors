@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Súper Memoria Kids</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <audio id="bg-music" loop>
+        <source src="assets/sounds/musica.mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="kiosk-container">
+        <header class="game-header">
+            <button id="btn-pause" class="btn-icon mini-btn" aria-label="Pausa">⏸️</button>
+
+            <div class="stats-box badge-style">
+                <span class="label">NIVEL</span>
+                <span class="value" id="level-display">1</span>
+            </div>
+            
+            <div class="stats-box timer-box">
+                <div class="timer-bar-bg">
+                    <div class="timer-bar-fill" id="timer-bar"></div>
+                    <span class="timer-icon">⏳</span>
+                </div>
+            </div>
+
+            <div class="stats-box badge-style">
+                <span class="label">PUNTOS</span>
+                <span class="value" id="score-display">0</span>
+            </div>
+        </header>
+
+        <main class="game-board">
+            <div class="grid-frame">
+                <div id="grid-container" class="game-grid"></div>
+            </div>
+            
+            <div id="overlay" class="overlay visible">
+                <div class="modal-card">
+                    <h1 id="overlay-title">¡MEMORIA<br>MÁGICA!</h1>
+                    <p id="overlay-msg">Mira los colores y repite la secuencia.</p>
+                    
+                    <div id="highscore-section" class="hidden">
+                        <p class="record-alert">¡NUEVO RÉCORD!</p>
+                        
+                        <div class="input-group">
+                            <input type="text" id="player-name" maxlength="5" placeholder="NOMBRE" autocomplete="off">
+                            <button id="btn-close-score" class="btn-close">✖</button>
+                        </div>
+                        
+                        <button id="btn-save-score" class="btn-secondary">GUARDAR</button>
+                    </div>
+
+                    <div id="leaderboard-section" class="hidden">
+                        <h3>🏆 CAMPEONES 🏆</h3>
+                        <ul id="leaderboard-list"></ul>
+                    </div>
+
+                    <div class="modal-buttons">
+                        <button id="btn-start" class="btn-primary push-3d">¡JUGAR!</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer class="game-controls">
+            <button id="btn-sound" class="btn-icon push-3d" aria-label="Sonido">🎵</button>
+            <button id="btn-restart" class="btn-secondary push-3d" disabled>REINICIAR</button>
+        </footer>
+    </div>
+
+    <script src="assets/js/game.js"></script>
+</body>
+</html>
